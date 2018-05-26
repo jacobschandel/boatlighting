@@ -7,7 +7,7 @@ from gpiozero import RGBLED
 from gpiozero import Button
 
 # ints to used
-choice = 9 # option selected, default is ALL LEDS OFF  TODO:change to 0
+choice = 0 # option selected, default is ALL LEDS OFF  TODO:change to 0
 max = 11
 
 # light  controls
@@ -24,9 +24,9 @@ selectionLED.color = (0,0,0)
 while 1==1:
     isChanged = 0
     if colorPick.is_pressed:
-        colorPick = colorPick + 1
-        if colorPick == max:
-            colorPick = 0
+        choice = choice + 1
+        if choice == max:
+            choice = 0
             isChanged = 1
     if isChanged == 1:
         #light choices
