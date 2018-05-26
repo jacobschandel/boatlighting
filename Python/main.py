@@ -25,33 +25,44 @@ selectionLED.color = (0,0,0)
 while 1==1: #TODO: add in support for lightRelays1
     selectionLED.off()
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,0,1))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,1,0))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,1,1))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,0))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,1))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,1,0))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,1,1))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,0,1), (0,1,0))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,0),(1,1,0))
     apply.wait_for_press()
+    apply.wait_for_release()
 
     selectionLED.pulse(.25,.25,(1,0,1), (0,1,1))
     apply.wait_for_press()
+    apply.wait_for_release()
