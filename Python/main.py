@@ -49,7 +49,8 @@ elif choice == 9: #fire
     selectionLED.pulse(1,1,(1,0,0),(1,1,0))
 else: #wild
     selectionLED.pulse(.25,.25,(1,0,1), (0,1,1))
-colorPick.wait_for_press()
+#TODO: remove the following
+apply.wait_for_press()
 
 """if apply.is_pressed:
     lightRelays1.set(choice)"""
