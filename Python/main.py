@@ -20,6 +20,8 @@ colorPick = Button(16)
 #TODO: possible support for multiple light racks in future?
 apply = Button(21)
 
+print("PROGRAM ACTIVE")
+
 selectionLED.color = (0,0,0)
 while 1==1:
     isChanged = 0
