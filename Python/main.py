@@ -21,36 +21,37 @@ colorPick = Button(16)
 apply = Button(21)
 
 selectionLED.color = (0,0,0)
-
-if colorPick.is_pressed:
-    colorPick = colorPick + 1
-    if colorPick == max:
-        colorPick = 0
-    #light choices
-if choice == 0: #off (lights go dark, Pi still on!)
-    selectionLED.pulse(1,1,(0,0,0))
-elif choice == 1: #blue
-    selectionLED.pulse(1,1,(0,0,1))
-elif choice == 2: #green
-    selectionLED.pulse(1,1,(0,1,0))
-elif choice == 3: #teal
-    selectionLED.pulse(1,1,(0,1,1))
-elif choice == 4: #red
-    selectionLED.pulse(1,1,(1,0,0))
-elif choice == 5: #purple
-    selectionLED.pulse(1,1,(1,0,1))
-elif choice == 6: #yellowish-orange
-    selectionLED.pulse(1,1,(1,1,0))
-elif choice == 7: #white
-    selectionLED.pulse(1,1,(1,1,1))
-elif choice == 8: #ice
-    selectionLED.pulse(1,1,(0,0,1), (0,1,0))
-elif choice == 9: #fire
-    selectionLED.pulse(1,1,(1,0,0),(1,1,0))
-else: #wild
-    selectionLED.pulse(.25,.25,(1,0,1), (0,1,1))
-#TODO: remove the following
-apply.wait_for_press()
+while 1==1:
+    isChanged = false
+    if colorPick.is_pressed:
+        colorPick = colorPick + 1
+        if colorPick == max:
+            colorPick = 0
+            isChanged = true
+    if isChanged:
+        #light choices
+        if choice == 0: #off (lights go dark, Pi still on!)
+            selectionLED.off
+        elif choice == 1: #blue
+            selectionLED.pulse(1,1,(0,0,1))
+        elif choice == 2: #green
+            selectionLED.pulse(1,1,(0,1,0))
+        elif choice == 3: #teal
+            selectionLED.pulse(1,1,(0,1,1))
+        elif choice == 4: #red
+            selectionLED.pulse(1,1,(1,0,0))
+        elif choice == 5: #purple
+            selectionLED.pulse(1,1,(1,0,1))
+        elif choice == 6: #yellowish-orange
+            selectionLED.pulse(1,1,(1,1,0))
+        elif choice == 7: #white
+            selectionLED.pulse(1,1,(1,1,1))
+        elif choice == 8: #ice
+            selectionLED.pulse(1,1,(0,0,1), (0,1,0))
+        elif choice == 9: #fire
+            selectionLED.pulse(1,1,(1,0,0),(1,1,0))
+        else: #wild
+            selectionLED.pulse(.25,.25,(1,0,1), (0,1,1))
 
 """if apply.is_pressed:
     lightRelays1.set(choice)"""
