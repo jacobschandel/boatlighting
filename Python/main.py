@@ -23,46 +23,50 @@ print("PROGRAM ACTIVE")
 
 selectionLED.color = (0,0,0)
 while 1==1: #TODO: add in support for lightRelays1
-    selectionLED.off()
+    selectionLED.off() #LEDs off, Pi on unless powered off
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(0,0,1))
+    selectionLED.pulse(1,1,(0,0,1)) #blue
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(0,1,0))
+    selectionLED.pulse(1,1,(0,1,0)) #green
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(0,1,1))
+    selectionLED.pulse(1,1,(0,1,1)) #teal
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(1,0,0))
+    selectionLED.pulse(1,1,(1,0,0)) #red
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(1,0,1))
+    selectionLED.pulse(1,1,(1,0,1)) #magenta
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(1,1,0))
+    selectionLED.pulse(1,1,(1,1,0)) #yellowish-orange
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(1,1,1))
+    selectionLED.pulse(1,1,(1,1,1)) #white
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(0,0,1), (0,1,0))
+    selectionLED.pulse(1,1,(0,0,1), (0,1,0)) #ice
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(1,1,(1,0,0),(1,1,0))
+    selectionLED.pulse(1,1,(1,0,0),(1,1,0)) #fire
     apply.wait_for_press()
     apply.wait_for_release()
 
-    selectionLED.pulse(.25,.25,(1,0,1), (0,1,1))
+    selectionLED.pulse(1.25,1.25,(1,0,0),(0,0,1))#American flag
+    apply.wait_for_press()
+    apply.wait_for_release()
+
+    selectionLED.pulse(.25,.25,(1,0,1), (0,1,1)) #WILD!!!
     apply.wait_for_press()
     apply.wait_for_release()
