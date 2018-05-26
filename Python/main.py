@@ -22,13 +22,13 @@ apply = Button(21)
 
 selectionLED.color = (0,0,0)
 while 1==1:
-    isChanged = false
+    isChanged = 0
     if colorPick.is_pressed:
         colorPick = colorPick + 1
         if colorPick == max:
             colorPick = 0
-            isChanged = true
-    if isChanged:
+            isChanged = 1
+    if isChanged == 1:
         #light choices
         if choice == 0: #off (lights go dark, Pi still on!)
             selectionLED.off
