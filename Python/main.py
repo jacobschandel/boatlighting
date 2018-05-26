@@ -24,7 +24,7 @@ selectionLED.color = (0,0,0)
 
 if colorPick.is_pressed:
     colorPick = colorPick + 1
-    if colorPick == max
+    if colorPick == max:
         colorPick = 0
     #light choices
 if choice == 0: #off (lights go dark, Pi still on!)
