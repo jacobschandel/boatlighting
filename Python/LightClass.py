@@ -48,3 +48,11 @@ class Lighting:
         self.blue.on()
 
     # TODO: add in support for ice, fire, and WILD
+
+    def ice()
+
+    def fire()
+
+    def usa()
+
+    def wild()

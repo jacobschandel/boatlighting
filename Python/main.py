@@ -12,7 +12,7 @@ max = 11
 
 # light  controls
 selectionLED = RGBLED(2,3,4)
-lightRelays1 = RGBLED(17,27,22) #TODO: make this a class
+lightRelays1 = RGBLED(17,27,22) #TODO: make this a class for the relays
 #TODO: more light relays to control in future?
 
 # control buttons
