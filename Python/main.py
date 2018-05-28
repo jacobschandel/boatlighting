@@ -61,7 +61,7 @@ while 1==1: #TODO: add in support for lightRelays1
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,0,1), (0,1,0)) #ice
-    while apply.is_pressed == False
+    while apply.is_pressed == False:
         lightRelays1.blue()
         sleep(1)
         lightRelays1.teal()
@@ -71,7 +71,7 @@ while 1==1: #TODO: add in support for lightRelays1
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,0),(1,1,0)) #fire
-    while apply.is_pressed == False
+    while apply.is_pressed == False:
         lightRelays1.red()
         sleep(1)
         lightRelays1.amber()
@@ -81,7 +81,7 @@ while 1==1: #TODO: add in support for lightRelays1
     apply.wait_for_release()
 
     selectionLED.pulse(1.25,1.25,(1,0,0),(0,0,1))#American flag
-    while apply.is_pressed == False
+    while apply.is_pressed == False:
         lightRelays1.red()
         sleep(1)
         lightRelays1.white()
@@ -91,7 +91,7 @@ while 1==1: #TODO: add in support for lightRelays1
     apply.wait_for_release()
 
     selectionLED.pulse(.25,.25,(1,0,1), (0,1,1)) #WILD!!!
-    while apply.is_pressed == False
+    while apply.is_pressed == False:
         lightRelays1.magenta()
         sleep(0.5)
         lightRelays1.red()

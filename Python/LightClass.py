@@ -11,42 +11,42 @@ class Lighting:
         self.green = DigitalOutputDevice(g)
         self.blue = DigitalOutputDevice(b)
 
-    def off()
+    def off():
         self.red.off()
         self.green.off()
         self.blue.off()
 
-    def blue()
+    def blue():
         self.red.off()
         self.green.off()
         self.blue.on()
 
-    def green()
+    def green():
         self.red.off()
         self.green.on()
         self.blue.off()
 
-    def teal()
+    def teal():
         self.red.off()
         self.green.on()
         self.blue.on()
 
-    def red()
+    def red():
         self.red.on()
         self.green.off()
         self.blue.off()
 
-    def purple()
+    def purple():
         self.red.on()
         self.green.off()
         self.blue.on()
 
-    def amber()
+    def amber():
         self.red.on()
         self.green.on()
         self.blue.off()
 
-    def white()
+    def white():
         self.red.on()
         self.green.on()
         self.blue.on()
