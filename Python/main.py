@@ -20,6 +20,7 @@ blue = DigitalOutputDevice(22)
 # control buttons
 #TODO: possible support for multiple light racks in future?
 apply = Button(21)
+kill = Button(20)
 
 print("PROGRAM ACTIVE")
 
@@ -28,6 +29,7 @@ green.off()
 blue.off()
 
 selectionLED.color = (0,0,0)
+
 while kill.is_pressed == False: #TODO: add in support for lightRelays1
     selectionLED.pulse(1,1,(0,0,1)) #blue
     blue.on()
@@ -148,9 +150,12 @@ while kill.is_pressed == False: #TODO: add in support for lightRelays1
     selectionLED.off()
     blue.off()
     apply.wait_for_release()
+    
 red.off()
 green.off()
 blue.off()
+
+selectionLED.color = (1,1,1)
 
 command = "/usr/bin/sudo /sbin/shutdown now"
 process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
