@@ -121,6 +121,7 @@ while kill.is_pressed == False: #TODO: add in support for lightRelays1
     selectionLED.pulse(1.25,1.25,(1,0,0),(0,0,1))#American flag
     while apply.is_pressed == False:
         red.on()
+        blue.off()
         sleep(1)
         green.on()
         blue.on()
