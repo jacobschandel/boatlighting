@@ -3,6 +3,7 @@ Jacob H. Schandel
 boatlighting | main.py
 """
 
+from gpiozero import DigitalOutputDevice
 from gpiozero import RGBLED
 from gpiozero import Button
 from time import sleep
