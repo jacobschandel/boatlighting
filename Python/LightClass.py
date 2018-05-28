@@ -6,7 +6,7 @@ boatlighting | LightClass.py
 from gpiozero import DigitalOutputDevice
 
 class ExternalLighting:
-    def __init__ ():
+    def __init__ (x = False):
         self.red = DigitalOutputDevice(17)
         self.green = DigitalOutputDevice(27)
         self.blue = DigitalOutputDevice(22)
