@@ -8,13 +8,9 @@ from gpiozero import Button
 from LightClass import Lighting
 from time import sleep
 
-# ints to used
-choice = 0 # option selected, default is ALL LEDS OFF  TODO:change to 0
-max = 11
-
 # light  controls
-selectionLED = RGBLED(2,3,4)
-lightRelays1 = Lighting(17,27,22) #TODO: make this a class for the relays
+selectionLED = RGBLED(2, 3, 4)
+lightRelays1 = Lighting(17, 27, 22)
 #TODO: more light relays to control in future?
 
 # control buttons
@@ -22,6 +18,9 @@ lightRelays1 = Lighting(17,27,22) #TODO: make this a class for the relays
 apply = Button(21)
 
 print("PROGRAM ACTIVE")
+
+#TODO: add a second buton, a while loop, and an ability to
+#      perform a proper shutdown
 
 selectionLED.color = (0,0,0)
 while 1==1: #TODO: add in support for lightRelays1
