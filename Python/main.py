@@ -5,13 +5,14 @@ boatlighting | main.py
 
 from gpiozero import RGBLED
 from gpiozero import Button
-from LightClass import ExternalLighting
 from time import sleep
 
 # light  controls
 selectionLED = RGBLED(2,3,4)
 
-lightRelays1 = ExternalLighting()
+red = DigitalOutputDevice(17)
+green = DigitalOutputDevice(27)
+blue = DigitalOutputDevice(22)
 #TODO: more light relays to control in future?
 
 # control buttons
@@ -26,65 +27,95 @@ print("PROGRAM ACTIVE")
 selectionLED.color = (0,0,0)
 while 1==1: #TODO: add in support for lightRelays1
     selectionLED.pulse(1,1,(0,0,1)) #blue
-    lightRelays1.blue()
+    red.off()
+    green.off()
+    blue.on()
     apply.wait_for_press()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,1,0)) #green
-    lightRelays1.green()
+    red.off()
+    green.on()
+    blue.off()
     apply.wait_for_press()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,1,1)) #teal
-    lightRelays1.teal()
+    red.off()
+    green.on()
+    blue.on()
     apply.wait_for_press()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,0)) #red
-    lightRelays1.red()
+    red.on()
+    green.off()
+    blue.off()
     apply.wait_for_press()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,1)) #magenta
-    lightRelays1.purple()
+    red.on()
+    green.off()
+    blue.on()
     apply.wait_for_press()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,1,0)) #yellowish-orange
-    lightRelays1.amber()
+    red.on()
+    green.on()
+    blue.off()
     apply.wait_for_press()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,1,1)) #white
-    lightRelays1.white()
+    red.on()
+    green.on()
+    blue.on()
     apply.wait_for_press()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,0,1), (0,1,0)) #ice
     while apply.is_pressed == False:
-        lightRelays1.blue()
+        red.off()
+        green.off()
+        blue.on()
         sleep(1)
-        lightRelays1.teal()
+        red.off()
+        green.on()
+        blue.on()
         sleep(1)
-        lightRelays1.green()
+        red.off()
+        green.on()
+        blue.off()
         sleep(1)
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,0),(1,1,0)) #fire
     while apply.is_pressed == False:
-        lightRelays1.red()
+        red.on()
+        green.off()
+        blue.off()
         sleep(1)
-        lightRelays1.amber()
+        red.on()
+        green.on()
+        blue.off()
         sleep(1)
-        lightRelays1.purple()
+        red.on()
+        green.off()
+        blue.on()
         sleep(1)
     apply.wait_for_release()
 
     selectionLED.pulse(1.25,1.25,(1,0,0),(0,0,1))#American flag
     while apply.is_pressed == False:
-        lightRelays1.red()
+        red.on()
+        green.off()
+        blue.off()
         sleep(1)
-        lightRelays1.white()
+        red.on()
+        green.on()
+        blue.on()
         sleep(1)
         lightRelays1.blue()
         sleep(1)
@@ -92,16 +123,28 @@ while 1==1: #TODO: add in support for lightRelays1
 
     selectionLED.pulse(.25,.25,(1,0,1), (0,1,1)) #WILD!!!
     while apply.is_pressed == False:
-        lightRelays1.magenta()
+        red.on() #purple
+        green.off()
+        blue.on()
         sleep(0.5)
-        lightRelays1.red()
+        red.on() #red
+        green.off()
+        blue.off()
         sleep(0.5)
-        lightRelays1.amber()
+        red.on()
+        green.on() #amber
+        blue.off()
         sleep(0.5)
-        lightRelays1.green()
+        red.off() #green
+        green.on()
+        blue.off()
         sleep(0.5)
-        lightRelays1.teal()
+        red.off() #teal
+        green.on()
+        blue.on()
         sleep(0.5)
-        lightRelays1.blue()
+        red.off() #blue
+        green.off()
+        blue.on()
         sleep(0.5)
     apply.wait_for_release()
