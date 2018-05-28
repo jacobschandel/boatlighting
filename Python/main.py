@@ -10,7 +10,11 @@ from time import sleep
 
 # light  controls
 selectionLED = RGBLED(2,3,4)
-lightRelays1 = Lighting(r=17,g=27,b=22)
+
+redUnderBoat = 17
+greenUnderBoat = 27
+blueUnderBoat = 22
+lightRelays1 = Lighting(redUnderBoat, greenUnderBoat, blueUnderBoat)
 #TODO: more light relays to control in future?
 
 # control buttons
