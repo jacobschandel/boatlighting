@@ -11,41 +11,41 @@ class ExternalLighting:
     blue = DigitalOutputDevice(22)
 
     def off(self):
-        red.off()
-        green.off()
-        blue.off()
+        self.red.off()
+        self.green.off()
+        self.blue.off()
 
     def blue(self):
-        red.off()
-        green.off()
-        blue.on()
+        self.red.off()
+        self.green.off()
+        self.blue.on()
 
     def green(self):
-        red.off()
-        green.on()
-        blue.off()
+        self.red.off()
+        self.green.on()
+        self.blue.off()
 
     def teal(self):
-        red.off()
-        green.on()
-        blue.on()
+        self.red.off()
+        self.green.on()
+        self.blue.on()
 
     def red(self):
-        red.on()
-        green.off()
-        blue.off()
+        self.red.on()
+        self.green.off()
+        self.blue.off()
 
     def purple(self):
-        red.on()
-        green.off()
-        blue.on()
+        self.red.on()
+        self.green.off()
+        self.blue.on()
 
     def amber(self):
-        red.on()
-        green.on()
-        blue.off()
+        self.red.on()
+        self.green.on()
+        self.blue.off()
 
     def white(self):
-        red.on()
-        green.on()
-        blue.on()
+        self.red.on()
+        self.green.on()
+        self.blue.on()
