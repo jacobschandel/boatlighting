@@ -5,16 +5,13 @@ boatlighting | main.py
 
 from gpiozero import RGBLED
 from gpiozero import Button
-from LightClass import Lighting
+from LightClass import ExternalLighting
 from time import sleep
 
 # light  controls
 selectionLED = RGBLED(2,3,4)
 
-redUnderBoat = 17
-greenUnderBoat = 27
-blueUnderBoat = 22
-lightRelays1 = Lighting()
+lightRelays1 = ExternalLighting()
 #TODO: more light relays to control in future?
 
 # control buttons
