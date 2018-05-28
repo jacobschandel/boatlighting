@@ -14,7 +14,7 @@ selectionLED = RGBLED(2,3,4)
 redUnderBoat = 17
 greenUnderBoat = 27
 blueUnderBoat = 22
-lightRelays1 = Lighting(int(redUnderBoat), int(greenUnderBoat), int(blueUnderBoat))
+lightRelays1 = Lighting()
 #TODO: more light relays to control in future?
 
 # control buttons
