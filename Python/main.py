@@ -32,6 +32,7 @@ while 1==1: #TODO: add in support for lightRelays1
     green.off()
     blue.on()
     apply.wait_for_press()
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,1,0)) #green
@@ -39,6 +40,7 @@ while 1==1: #TODO: add in support for lightRelays1
     green.on()
     blue.off()
     apply.wait_for_press()
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,1,1)) #teal
@@ -46,6 +48,7 @@ while 1==1: #TODO: add in support for lightRelays1
     green.on()
     blue.on()
     apply.wait_for_press()
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,0)) #red
@@ -53,6 +56,7 @@ while 1==1: #TODO: add in support for lightRelays1
     green.off()
     blue.off()
     apply.wait_for_press()
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,1)) #magenta
@@ -60,6 +64,7 @@ while 1==1: #TODO: add in support for lightRelays1
     green.off()
     blue.on()
     apply.wait_for_press()
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,1,0)) #yellowish-orange
@@ -67,6 +72,7 @@ while 1==1: #TODO: add in support for lightRelays1
     green.on()
     blue.off()
     apply.wait_for_press()
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,1,1)) #white
@@ -74,6 +80,7 @@ while 1==1: #TODO: add in support for lightRelays1
     green.on()
     blue.on()
     apply.wait_for_press()
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(0,0,1), (0,1,0)) #ice
@@ -90,6 +97,7 @@ while 1==1: #TODO: add in support for lightRelays1
         green.on()
         blue.off()
         sleep(1)
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1,1,(1,0,0),(1,1,0)) #fire
@@ -106,6 +114,7 @@ while 1==1: #TODO: add in support for lightRelays1
         green.off()
         blue.on()
         sleep(1)
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(1.25,1.25,(1,0,0),(0,0,1))#American flag
@@ -118,8 +127,10 @@ while 1==1: #TODO: add in support for lightRelays1
         green.on()
         blue.on()
         sleep(1)
-        lightRelays1.blue()
+        red.off()
+        green.off()
         sleep(1)
+    selectionLED.off()
     apply.wait_for_release()
 
     selectionLED.pulse(.25,.25,(1,0,1), (0,1,1)) #WILD!!!
@@ -148,4 +159,5 @@ while 1==1: #TODO: add in support for lightRelays1
         green.off()
         blue.on()
         sleep(0.5)
+    selectionLED.off()
     apply.wait_for_release()
