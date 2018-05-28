@@ -9,8 +9,8 @@ from LightClass import Lighting
 from time import sleep
 
 # light  controls
-selectionLED = RGBLED(2, 3, 4)
-lightRelays1 = Lighting(17, 27, 22)
+selectionLED = RGBLED(2,3,4)
+lightRelays1 = Lighting(r=17,g=27,b=22)
 #TODO: more light relays to control in future?
 
 # control buttons
