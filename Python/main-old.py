@@ -1,6 +1,10 @@
 """
 Jacob H. Schandel
-boatlighting | main.py
+boatlighting | main-old.py
+
+This program is the original version of the boat light program I wrote.
+It works fine, but I wanted to make the code cleaner by using multiple 
+compilation so my next addition to the program is easier.
 """
 
 from gpiozero import DigitalOutputDevice
