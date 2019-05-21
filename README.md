@@ -1,8 +1,6 @@
 # Boat Lighting
 
-## WARNING: Project NOT Bench Tested!!
-
-This project controls a lighting system designed for a boat (in this case, a pontoon).
+This project controls a lighting system designed for a boat (in this case, a pontoon).  Note that, while the provided Python code works, I am working on rewriting this as a C++ program such that it works more smoothly.
 
 ## Hardware
 
