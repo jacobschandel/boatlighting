@@ -26,3 +26,14 @@ const int RGB_EXT[3] = {17, 27, 22};
 const int RGB_INT_ADDR = -1;  // TODO: change to the chosen pin
 const int TOGGLE = 21;
 const int RESET = 20;
+
+int main ()
+{
+
+}
+
+// initializes the pins for the necessary uses as inputs and outputs
+void initialize()
+{
+
+}
