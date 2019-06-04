@@ -29,13 +29,15 @@ const int RESET = 20;
 
 int main ()
 {
-    initialize()
+    initializeStandardGPIO()
     // TODO: do stuff
     return 0;
 }
 
 // initializes the pins for the necessary uses as inputs and outputs
-void initialize()
+void initializeStandardGPIO()
 {
+    wiringPiSetup();
     
+    pinMode(RGB_LED, OUTPUT);
 }
