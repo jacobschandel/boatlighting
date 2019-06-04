@@ -14,7 +14,15 @@ The following hardware was used for this project:
 
 For more on the hardware for this project, please [see its page on Hackster.io](https://www.hackster.io).
 
-## What The File Does
+## Documentation on New C++ Code
+
+The new program for my boat lighting project is written primarily in C++, but is partially powered by Python.  I am presently not at a point where I have a working C++ program, but encourage you to see my original code.
+
+## Documentation on Original Python Code
+
+The following documents the functionality of the code in the Python directory of this repository.  For the rewrite, please see the docs above for "rewrite" directory files.
+
+### What The File Does
 
 The program consists of one file: `main.py`.  The file `main.py` is the primary script that must run to execute this project.  The strips used in this particular project are not wired directly into the Pi, but through relays.  Relays, unlike RGB LEDs, can not be used to merely dim the lights in this project, but may only be straight on or off.  So, rather than using the RGBLED class from gpiozero to run the strip lights, we use each element of the light (red, blue, green) as its own relay.  This is done to prevent any urges to try using a relay at half power, which could have unintended consequences in the real world.
 
@@ -32,7 +40,7 @@ The program consists of one file: `main.py`.  The file `main.py` is the primary 
 * **American flag:** red, white, and blue to give a burst of American patriotism
 * **Wild:** a cool pattern of colors which will surely make a boat stand out on the water (in a good way, of course)
 
-## How to Use
+### How to Use
 
 This project was simply connected to a boat's existing lighting electrical system.  When the Pi boots, it is configured to execute this script by adding the following line to the /etc/rc.local file on the Pi right before the line that reads `exit 0`, assuming you clone this repository to your Pi's desktop:
 

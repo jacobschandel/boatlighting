@@ -29,11 +29,13 @@ const int RESET = 20;
 
 int main ()
 {
-
+    initialize()
+    // TODO: do stuff
+    return 0;
 }
 
 // initializes the pins for the necessary uses as inputs and outputs
 void initialize()
 {
-
+    
 }
