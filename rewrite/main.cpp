@@ -5,6 +5,7 @@
 // Purpose: this file in the program is responsible for driving the rest of the program.
 
 #include <iostream>
+#include <cstdlib>
 #include <wiringPi.h>
 #include "ws2812-rpi.h"
 
@@ -53,6 +54,8 @@ void fire(NeoPixel*);
 void flagAmerican(NeoPixel*);
 void wild(NeoPixel*);
 
+bool shutdownScript();
+
 void cellConnect();
 
 // ********************************************************************************************
@@ -76,6 +79,14 @@ int main ()
             ++selection;
             if (selection >= 11)
                 selection = 0;
+        }
+        else if (digitalRead(RESET) == 1)
+        {
+            bool fightOrFlight = shutdownScript();
+            if (fightOrFlight)
+            {
+                system("shutdown now");
+            }
         }
         switch (selection)
         {
@@ -115,7 +126,6 @@ int main ()
             default:
                 // TODO: app partner
                 break;
-
         }
     }
     // TODO: do stuff
@@ -151,12 +161,15 @@ void initializeStandardGPIO()
     pinMode(RGB_EXT[2], OUTPUT);
 }
 
-//
+// sets lights to the color solid blue
 // inputs: 
 // outputs: 
 void blue(NeoPixel * n)
 {
     // TODO: define function
+    digitalWrite(RGB_EXT[0], 0);
+    digitalWrite(RGB_EXT[1], 0);
+    digitalWrite(RGB_EXT[2], 1);
 }
 
 //
@@ -165,6 +178,9 @@ void blue(NeoPixel * n)
 void green(NeoPixel * n)
 {
     // TODO: define function
+    digitalWrite(RGB_EXT[0], 0);
+    digitalWrite(RGB_EXT[1], 1);
+    digitalWrite(RGB_EXT[2], 0);
 }
 
 //
@@ -173,6 +189,9 @@ void green(NeoPixel * n)
 void teal(NeoPixel * n)
 {
     // TODO: define function
+    digitalWrite(RGB_EXT[0], 0);
+    digitalWrite(RGB_EXT[1], 1);
+    digitalWrite(RGB_EXT[2], 1);
 }
 
 //
@@ -181,6 +200,9 @@ void teal(NeoPixel * n)
 void red(NeoPixel * n)
 {
     // TODO: define function
+    digitalWrite(RGB_EXT[0], 1);
+    digitalWrite(RGB_EXT[1], 0);
+    digitalWrite(RGB_EXT[2], 0);
 }
 
 //
@@ -189,6 +211,9 @@ void red(NeoPixel * n)
 void magenta(NeoPixel * n)
 {
     // TODO: define function
+    digitalWrite(RGB_EXT[0], 1);
+    digitalWrite(RGB_EXT[1], 0);
+    digitalWrite(RGB_EXT[2], 1);
 }
 
 //
@@ -197,7 +222,11 @@ void magenta(NeoPixel * n)
 void amber(NeoPixel * n)
 {
     // TODO: define function
+    digitalWrite(RGB_EXT[0], 1);
+    digitalWrite(RGB_EXT[1], 1);
+    digitalWrite(RGB_EXT[2], 0);
 }
+
 
 //
 // inputs: 
@@ -205,6 +234,9 @@ void amber(NeoPixel * n)
 void white(NeoPixel * n)
 {
     // TODO: define function
+    digitalWrite(RGB_EXT[0], 1);
+    digitalWrite(RGB_EXT[1], 1);
+    digitalWrite(RGB_EXT[2], 1);
 }
 
 //
@@ -212,7 +244,13 @@ void white(NeoPixel * n)
 // outputs: 
 void ice(NeoPixel * n)
 {
-    // TODO: define function
+    blue(n);
+    usleep(1000000);
+    teal(n);
+    usleep(1000000);
+    green(n);
+    usleep(1000000);
+    // TODO: define function for NeoPixels
 }
 
 //
@@ -220,6 +258,12 @@ void ice(NeoPixel * n)
 // outputs: 
 void fire(NeoPixel * n)
 {
+    magenta(n);
+    usleep(1000000);
+    red(n);
+    usleep(1000000);
+    amber(n);
+    usleep(1000000);
     // TODO: define function
 }
 
@@ -228,6 +272,12 @@ void fire(NeoPixel * n)
 // outputs: 
 void flagAmerican(NeoPixel * n)
 {
+    red(n);
+    usleep(1000000);
+    white(n);
+    usleep(1000000);
+    blue(n);
+    usleep(1000000);
     // TODO: define function
 }
 
@@ -236,5 +286,32 @@ void flagAmerican(NeoPixel * n)
 // outputs: 
 void wild(NeoPixel * n)
 {
+    magenta(n);
+    usleep(500000);
+    red(n);
+    usleep(500000);
+    amber(n);
+    usleep(500000);
+    green(n);
+    usleep(500000);
+    teal(n);
+    usleep(500000);
+    blue(n);
+    usleep(500000);
     // TODO: define function
+}
+
+// 
+// inputs: none
+// outputs: sends a bool to either keep the program alive or shutdown the system after 3 seconds
+bool shutdownScript()
+{
+    for (int i = 0; i < 6; ++i)
+    {
+        // check every half second for shutdown script
+        if (digitalRead(RESET) == 0)
+            return false;
+        usleep(500000);
+    }
+    return true;
 }
