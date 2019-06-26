@@ -7,7 +7,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <wiringPi.h>
-#include "ws2812-rpi.h"
+
+// TODO: readd the following
+// #include "ws2812-rpi.h"
 
 // Note: wiringPi.h is part of Raspbian, and may show as an error when writing code on a device
 //       not Raspbian-based, such as a Windows PC code editor with debugging.
@@ -42,17 +44,18 @@ const int RESET = 20;
 
 void initializeStandardGPIO();
 
-void blue(NeoPixel*);
-void green(NeoPixel*);
-void teal(NeoPixel*);
-void red(NeoPixel*);
-void magenta(NeoPixel*);
-void amber(NeoPixel*);
-void white(NeoPixel*);
-void ice(NeoPixel*);
-void fire(NeoPixel*);
-void flagAmerican(NeoPixel*);
-void wild(NeoPixel*);
+// TODO: replace int with NeoPixel
+void blue(int);
+void green(int);
+void teal(int);
+void red(int);
+void magenta(int);
+void amber(int);
+void white(int);
+void ice(int);
+void fire(int);
+void flagAmerican(int);
+void wild(int);
 
 bool shutdownScript();
 
@@ -69,7 +72,9 @@ void cellConnect();
 int main ()
 {
     initializeStandardGPIO();
-    NeoPixel * n = new NeoPixel(25); // TODO: replace with proper LED count
+    // TODO: NeoPixel * n = new NeoPixel(25); // TODO: replace with proper LED count
+
+    int n = 0;
 
     int selection = 0;
     while (true)
@@ -164,7 +169,7 @@ void initializeStandardGPIO()
 // sets lights to the color solid blue
 // inputs: 
 // outputs: 
-void blue(NeoPixel * n)
+void blue(int n)
 {
     // TODO: define function
     digitalWrite(RGB_EXT[0], 0);
@@ -175,7 +180,7 @@ void blue(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void green(NeoPixel * n)
+void green(int n)
 {
     // TODO: define function
     digitalWrite(RGB_EXT[0], 0);
@@ -186,7 +191,7 @@ void green(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void teal(NeoPixel * n)
+void teal(int n)
 {
     // TODO: define function
     digitalWrite(RGB_EXT[0], 0);
@@ -197,7 +202,7 @@ void teal(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void red(NeoPixel * n)
+void red(int n)
 {
     // TODO: define function
     digitalWrite(RGB_EXT[0], 1);
@@ -208,7 +213,7 @@ void red(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void magenta(NeoPixel * n)
+void magenta(int n)
 {
     // TODO: define function
     digitalWrite(RGB_EXT[0], 1);
@@ -219,7 +224,7 @@ void magenta(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void amber(NeoPixel * n)
+void amber(int n)
 {
     // TODO: define function
     digitalWrite(RGB_EXT[0], 1);
@@ -231,7 +236,7 @@ void amber(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void white(NeoPixel * n)
+void white(int n)
 {
     // TODO: define function
     digitalWrite(RGB_EXT[0], 1);
@@ -242,7 +247,7 @@ void white(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void ice(NeoPixel * n)
+void ice(int n)
 {
     blue(n);
     usleep(1000000);
@@ -256,7 +261,7 @@ void ice(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void fire(NeoPixel * n)
+void fire(int n)
 {
     magenta(n);
     usleep(1000000);
@@ -270,7 +275,7 @@ void fire(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void flagAmerican(NeoPixel * n)
+void flagAmerican(int n)
 {
     red(n);
     usleep(1000000);
@@ -284,7 +289,7 @@ void flagAmerican(NeoPixel * n)
 //
 // inputs: 
 // outputs: 
-void wild(NeoPixel * n)
+void wild(int n)
 {
     magenta(n);
     usleep(500000);
