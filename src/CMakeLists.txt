@@ -13,7 +13,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 # main program
-set(MAIN_SOURCE main.cpp)
+set(MAIN_SOURCE main.cpp SecretLogger.cpp)
 add_executable(boatlighting ${MAIN_SOURCE})
 
 # Turn on warnings
