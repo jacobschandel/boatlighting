@@ -1,2 +1,5 @@
 # VS Code local configs
-**\.vscode
+**/.vscode
+
+# build directory
+**/build
