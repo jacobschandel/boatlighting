@@ -12,13 +12,13 @@
 #include <fstream>
 #include <string>
 
-class SecretLogger
+class Logger
 {
 public:
     /**
      * @brief Construct a new Logger object
      */
-    SecretLogger();
+    Logger();
 
     /**
      * @brief Log a message in the log file and std::cout
@@ -27,7 +27,7 @@ public:
      */
     void log(const std::string& message);
 
-    ~SecretLogger();
+    ~Logger();
 
 private:
     std::string logFileName;

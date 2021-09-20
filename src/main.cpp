@@ -9,7 +9,7 @@
  * 
  */
 
-#include "SecretLogger.hpp"
+#include "Logger.hpp"
 
 #include <iostream>
 
@@ -37,11 +37,14 @@ int main (int argc, char** argv)
     // normal operation without args
     else mode = 'n';
 
-    SecretLogger logger;
+    Logger logger;
 
     logger.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     logger.log("~       BOAT LIGHTING CONTROL SYSTEM       ~");
     logger.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+    // TODO: define lighting systems
+    // TODO: get connected data to app
 
     return 0;
 }

@@ -9,10 +9,10 @@
  * 
  */
 
-#include "SecretLogger.hpp"
+#include "Logger.hpp"
 #include <iostream>
 
-SecretLogger::SecretLogger()
+Logger::Logger()
 {
     logFileName = "boatlights.log";
 
@@ -20,13 +20,13 @@ SecretLogger::SecretLogger()
     logFile.open(logFileName, std::ofstream::out);  
 }
 
-void SecretLogger::log(const std::string& message)
+void Logger::log(const std::string& message)
 {
     std::cout << message << std::endl;
     logFile << message << std::endl;
 }
 
-SecretLogger::~SecretLogger()
+Logger::~Logger()
 {
     logFile.close();
 }
