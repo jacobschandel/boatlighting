@@ -1,6 +1,6 @@
 # Boat Lighting
 
-This project controls a lighting system designed for a boat (in this case, a pontoon).  Note that, while the provided Python code in the `old` directory works, I am working on rewriting this as a C++ program such that it works more smoothly.
+This project controls a lighting system designed for a boat (in this case, a pontoon).  Note that, while the provided Python code in the `old` directory works, I am working on rewriting this as such that it works more smoothly.
 
 ## Hardware
 
